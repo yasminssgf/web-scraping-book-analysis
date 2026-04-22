@@ -30,7 +30,6 @@ for book in books:
 soup.find_all('p', class_='price_color')
 
 #Menyimpan hasil scraping tersebut langsung ke dalam file CSV
-
 # 1. Siapkan List untuk menampung data
 data_buku = []
 
@@ -61,6 +60,7 @@ print("Proses Selesai! File 'daftar_buku.csv' telah dibuat.")
 #Melihat ringkasan statistik
 df.describe()
 
+#Data Cleaning
 # 1. Load data yang sudah di-scrape
 df = pd.read_csv('/content/daftar_buku.csv')
 
@@ -90,7 +90,6 @@ print(f"\nHasil Analisis: \nRata-rata harga adalah Â£{rata_rata:.2f} \nMaximum
 
 # Menampilkan jumlah baris kosong di setiap kolom
 print(df.isnull().sum())
-
 
 # Jika ada kolom yang kosong isi dengan rata-rata (Imputation)
 # df['Judul'] = df['Judul'].fillna(df['Judul'].mean())
